@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "173201ec-279e-433a-8857-769354f2340e",
+		"_postman_id": "9cb2218c-a162-4a05-b3ed-ed4fc012830c",
 		"name": "node_backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "18772604"
@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"foo\",\n    \"password\": \"foobar\"\n}",
+					"raw": "{\n    \"username\": \"{{app_username}}\",\n    \"password\": \"{{app_password}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -21,14 +21,12 @@
 					}
 				},
 				"url": {
-					"raw": "127.0.0.1:5000/register",
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/register",
+					"protocol": "{{app_http_protocol}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{app_host}}"
 					],
-					"port": "5000",
+					"port": "{{app_port}}",
 					"path": [
 						"register"
 					]
@@ -43,7 +41,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"foo\",\n    \"password\": \"foobar\"\n}",
+					"raw": "{\n    \"username\": \"{{app_username}}\",\n    \"password\": \"{{app_password}}\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -51,14 +49,12 @@
 					}
 				},
 				"url": {
-					"raw": "127.0.0.1:5000/customer/login",
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/customer/login",
+					"protocol": "{{app_http_protocol}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{app_host}}"
 					],
-					"port": "5000",
+					"port": "{{app_port}}",
 					"path": [
 						"customer",
 						"login"
@@ -82,14 +78,12 @@
 					}
 				},
 				"url": {
-					"raw": "127.0.0.1:5000/customer/auth/review/9780140447699",
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/customer/auth/review/9780140447699",
+					"protocol": "{{app_http_protocol}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{app_host}}"
 					],
-					"port": "5000",
+					"port": "{{app_port}}",
 					"path": [
 						"customer",
 						"auth",
@@ -106,14 +100,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "127.0.0.1:5000/",
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/",
+					"protocol": "{{app_http_protocol}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{app_host}}"
 					],
-					"port": "5000",
+					"port": "{{app_port}}",
 					"path": [
 						""
 					]
@@ -136,14 +128,12 @@
 					}
 				},
 				"url": {
-					"raw": "127.0.0.1:5000/customer/auth/review/9780140447699",
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/customer/auth/review/9780140447699",
+					"protocol": "{{app_http_protocol}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{app_host}}"
 					],
-					"port": "5000",
+					"port": "{{app_port}}",
 					"path": [
 						"customer",
 						"auth",
@@ -160,14 +150,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "127.0.0.1:5000/isbn/9780140447699",
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/isbn/9780140447699",
+					"protocol": "{{app_http_protocol}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{app_host}}"
 					],
-					"port": "5000",
+					"port": "{{app_port}}",
 					"path": [
 						"isbn",
 						"9780140447699"
@@ -182,17 +170,35 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "127.0.0.1:5000/review/9780140447699",
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/review/9780140447699",
+					"protocol": "{{app_http_protocol}}",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{app_host}}"
 					],
-					"port": "5000",
+					"port": "{{app_port}}",
 					"path": [
 						"review",
 						"9780140447699"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Book By Author",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{app_http_protocol}}://{{app_host}}:{{app_port}}/author/Jane%20Austen",
+					"protocol": "{{app_http_protocol}}",
+					"host": [
+						"{{app_host}}"
+					],
+					"port": "{{app_port}}",
+					"path": [
+						"author",
+						"Jane%20Austen"
 					]
 				}
 			},
